@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-
+import Typography from '@mui/material/Typography';
 const CityInfo = ({city, country}) => {
   return (
-    <div>
-      
-    </div>
+    <Fragment>
+      <Typography>{city}</Typography>
+      <Typography>{country}</Typography>
+    </Fragment>
   )
 }
 
