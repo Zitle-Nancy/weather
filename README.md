@@ -86,3 +86,7 @@ La idea es que los requerimientos sean traducido en pruebas unitarias y que esta
 3. Hacemos la implementación de ese test, escribiendo el código de la manera más simple y sencilla para que pase, usando el principio "KISS" (Keep It Simple, Stupid)("Hazlo simple");
 4. Verificar que el código que hemos escrito pase;
 5. Refinamiento, eliminamos código replicado y continuamos con los demás requisitos.
+
+## Proveedores de contexto (Context.Provider)
+
+El context.provider es un componente que recibe un prop value que serán los valores a compartir y todos los componentes renderizados dentro del que tiene el provider tendrán accesp a los valores del contexto.
