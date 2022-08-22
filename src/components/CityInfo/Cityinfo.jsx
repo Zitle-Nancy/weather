@@ -4,8 +4,8 @@ import Typography from '@mui/material/Typography';
 const CityInfo = ({city, country}) => {
   return (
     <Fragment>
-      <Typography variant="h4">{city}</Typography>
-      <Typography variant="h6">{country}</Typography>
+      <Typography display="inline" variant="h4">{city}, </Typography>
+      <Typography display="inline" variant="h6">{country}</Typography>
     </Fragment>
   )
 }
