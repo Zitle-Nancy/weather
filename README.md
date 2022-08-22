@@ -24,21 +24,19 @@ otra en tu src llamada `stories`, dentro de esta podremos encontrar los componen
 
 - Instalar la fuente roboto, puede ser desde cdn o con yarn `typeface-roboto`
 
-
 # Test unitarios y TDD
 
 ### Test automáticos
 
-Analogía de test: 
+Analogía de test:
 Imaginemos que vamos a construir un avión de madera desde cero y como comenzamos es creando sus alas, para esto primero sacamos sus medidas, pasamos del boceto a crearlas en la madera y vamos midiendo que estas hagan match con las demás partes del avión; Al hacer esto nos permitimos ir probando nuestros avances para irnos asegurando que lo estamos haciendo bien y en el caso que no sea así poder ir corrigiendo en ese momento y no esperar al final, garantizando que nuestro objetivo (el avión) será funcional y cumple con los requisitos que solicitamos.
 Lo mismo sucede con los test en nuestro código, nos garantizan de que lo que estamos contruyendo esta bien, nos será útil y funcional.
 
 ### Qué tipo de test automáticos existen?
 
-#### Test unitario
+#### Test unitario (pruebas unitarias)
 
 Se prueba una unidad (bloque) de código, por ejemplo una función, un objeto, etc. El test unitario es atomico, porque verifica la funionalidad de lo que se ha escrito en un bloque de código.
-
 
 #### Test de integración
 
@@ -54,12 +52,37 @@ Prueban que TODO el sistema este funcionando, regresando a nuestra analogía, se
 
 Se suele usar las AAA (tres A)
 
-* A (Arrange) ```// Acomdar las cosas para que funcionen los test```
+- A (Arrange) `// Acomdar las cosas para que funcionen los test`
 
-* A (Act) ```// Ejecutamos el test```
+- A (Act) `// Ejecutamos el test`
 
-* A (Assert) ```// Evaluamos que lo que estamos esperando en nuestros tests pasen, y las posibles respuestas serían failed o passed.```
+- A (Assert) `// Evaluamos que lo que estamos esperando en nuestros tests pasen, y las posibles respuestas serían failed o passed.`
 
-- > Nota: cuando se va hacer testing de algún componente lo primero que debemos saber es que va hacer, que debe pasar con las entradas que reciba?, cuales deberían de ser sus salidas?, etc.
+* > Nota: cuando se va hacer testing de algún componente lo primero que debemos saber es que va hacer, que debe pasar con las entradas que reciba?, cuales deberían de ser sus salidas?, etc.
 
-- > Nota 2: Se le llama SUT (Subject Under Testing) al componente que vamos a testear.
+* > Nota 2: Se le llama SUT (Subject Under Testing) al componente que vamos a testear.
+
+## TDD (Test Driven Development) (Desarrollo guiado por pruebas)
+
+Se trata de primero escribir las pruebas unitarias;
+
+Pasos a seguir:
+
+1. En primer lugar se escribe la prueba y se verifica que esta falla;
+2. Implementar el código y verificar que vaya pasando, después hacer un refactor de ese código.
+
+El objetivo de TDD es crear un código limpio y funcional.
+
+En resumen
+
+```
+La idea es que los requerimientos sean traducido en pruebas unitarias y que estas pasen y se cumplan los requisitos.
+```
+
+### ¿Cómo es desarrollar con TDD?
+
+1. Primero tener un requisito, definir lo que tenemos que hacer y esta definicion nos lleva hacer una prueba automatizada;
+2. Verificamos que la prueba falla porque aún no hay ningún código que corresponda a ese test;
+3. Hacemos la implementación de ese test, escribiendo el código de la manera más simple y sencilla para que pase, usando el principio "KISS" (Keep It Simple, Stupid)("Hazlo simple");
+4. Verificar que el código que hemos escrito pase;
+5. Refinamiento, eliminamos código replicado y continuamos con los demás requisitos.
