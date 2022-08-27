@@ -5,7 +5,7 @@ import Weather from '../Weather/Weather'
 const renderCityAndCountry = (cityAndCountry) => {
   const {city, country} = cityAndCountry
   return (
-    <li>
+    <li key={city}>
       <CityInfo city={city} country={country}/>
       <Weather temperature={20} weather={'sunny'}/>
     </li>
@@ -13,9 +13,9 @@ const renderCityAndCountry = (cityAndCountry) => {
 }
 const CityList = ({cities}) => {
   return (
-    <div>
-    {cities.map((cityAndCountry) => renderCityAndCountry(cityAndCountry))}
-    </div>
+    <ul>
+      {cities.map((cityAndCountry) => renderCityAndCountry(cityAndCountry))}
+    </ul>
   )
 }
 
