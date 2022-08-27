@@ -1,5 +1,4 @@
 import CityInfo from "./Cityinfo";
-import 'typeface-roboto';
 
 export default {
   title: 'CityInfo',
