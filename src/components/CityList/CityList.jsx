@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import CityInfo from '../CityInfo/Cityinfo'
-import Weather from '../Weather/Weather'
+import CityInfo from '../CityInfo'
+import Weather from '../Weather'
 
 const renderCityAndCountry = (cityAndCountry) => {
   const {city, country} = cityAndCountry
@@ -24,4 +24,3 @@ CityList.propTypes = {
 }
 
 export default CityList
-
