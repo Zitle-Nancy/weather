@@ -4,6 +4,13 @@ import Typography from '@mui/material/Typography';
 import { WiCloud, WiDayCloudy,WiDayFog, WiDaySunny,WiRain } from 'react-icons/wi'
 import { IconContext } from 'react-icons';
 
+const validWeather = [
+"cloud",
+"cloudy",
+"fog",
+"sunny",
+"rain"]
+
 const weathers = {
   cloud:WiCloud,
   cloudy:WiDayCloudy,
@@ -34,7 +41,7 @@ const WeatherComponent = ({temperature, weather}) => {
 
 WeatherComponent.propTypes = {
   temperature: PropTypes.number.isRequired,
-  weather: PropTypes.string.isRequired
+  weather: PropTypes.oneOf(validWeather).isRequired
 }
 
 export default WeatherComponent

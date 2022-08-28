@@ -90,3 +90,16 @@ La idea es que los requerimientos sean traducido en pruebas unitarias y que esta
 ## Proveedores de contexto (Context.Provider)
 
 El context.provider es un componente que recibe un prop value que serán los valores a compartir y todos los componentes renderizados dentro del que tiene el provider tendrán accesp a los valores del contexto.
+
+# Diseño responsivo: Grid Layout
+
+En story book existen addons (los defino como plugins), uno de ello es `@storybook/addon-viewport` el cual nos ayudará para ver el diseño de nuestros componentes en diferentes tamaños. Solo debomos instalarlo y agregar esta linea en el main.js de la carpeta storybook.
+`"@storybook/addon-viewport/register"`
+
+PropTypes: la propiedad `oneOf()` que recibe nuestro arreglo, nos ayuda a ser más especificos sobre que valores debe recibir, es decir en el ejemplo de weather no derbería de aceptar mi nombre "Nancy" si bien, es un string no es un tipo de weather y con esa propiedad nos aseguramos de obtener un error.
+
+Testing - Nuevas propiedades
+
+- > `jest.fn()` // nos ayuda a crear una función mock
+- > `fireEvent` // nos ayudará a ejecutar un evento/acción
+- > `toHaveBeenCalledTimes` // un método donde podremos pasarle por args cuantas veces una función deberá ser ejecutada.

@@ -1,20 +1,28 @@
+import { Grid } from '@mui/material'
 import PropTypes from 'prop-types'
 import CityInfo from '../CityInfo'
 import Weather from '../Weather'
 
-const renderCityAndCountry = (cityAndCountry) => {
+// renderCityAndCountry se va a convertir en una función que retorna otra función
+const renderCityAndCountry = (eventOnClickCity) => (cityAndCountry) => {
   const {city, country} = cityAndCountry
   return (
-    <li key={city}>
+    <li key={city} onClick={eventOnClickCity}>
+    <Grid container justifyContent="center" alignItems="center">
+      <Grid item md={8} xs={12}>
       <CityInfo city={city} country={country}/>
-      <Weather temperature={20} weather={'sunny'}/>
+      </Grid>
+      <Grid item md={4} xs={12}>
+       <Weather temperature={20} weather={'sunny'}/>
+      </Grid>
+    </Grid>
     </li>
   )
 }
-const CityList = ({cities}) => {
+const CityList = ({cities, onClickCity}) => {
   return (
     <ul>
-      {cities.map((cityAndCountry) => renderCityAndCountry(cityAndCountry))}
+      {cities.map((cityAndCountry) => renderCityAndCountry(onClickCity)(cityAndCountry))}
     </ul>
   )
 }
