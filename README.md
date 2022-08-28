@@ -100,6 +100,22 @@ PropTypes: la propiedad `oneOf()` que recibe nuestro arreglo, nos ayuda a ser m�
 
 Testing - Nuevas propiedades
 
-- > `jest.fn()` // nos ayuda a crear una función mock
-- > `fireEvent` // nos ayudará a ejecutar un evento/acción
-- > `toHaveBeenCalledTimes` // un método donde podremos pasarle por args cuantas veces una función deberá ser ejecutada.
+- > `jest.fn()`: nos ayuda a crear una función mock
+- > `fireEvent`: nos ayudará a ejecutar un evento/acción
+- > `toHaveBeenCalledTimes`: un método donde podremos pasarle por args cuantas veces una función deberá ser ejecutada.
+- > `FindText`: permite encontrar un componente por el texto que le indiquemos
+
+# Currying
+
+Prceso de descomponer una funcion que recibe más de un parametro en una serie de funciones que utilizan un unico parametro, tecnica utilizada en programación funcional, esto se usa en connect de redux.
+
+Beneficios:
+
+- Mejor estructura de código
+- Potente con Map
+- Más reutilización de funciones
+- Permite componet funciones
+
+# Closure
+
+Funciones internas a otras funciones.
