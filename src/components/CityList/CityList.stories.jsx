@@ -1,5 +1,5 @@
 import CityList from "./CityList";
-
+import { action } from '@storybook/addon-actions'
 export default {
   title: 'CityList',
   component: CityList
@@ -10,4 +10,4 @@ const cities = [
   {city:'Madrid', country:'España'},
   {city:'Ciudad de México', country:'México'},
 ]
-export const CityListExample = () => <CityList cities={cities} />
+export const CityListExample = () => <CityList cities={cities} onClickCity={action('Click en city')}/>
