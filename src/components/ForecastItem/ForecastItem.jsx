@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography';
+import { IconContext } from 'react-icons';
 import Grid from '@mui/material/Grid'
+import WeatherIcon from '../WeatherIcon';
 
 const ForecastItem = ({weekDay, hour, state, temperature}) => {
   return (
@@ -19,7 +21,9 @@ const ForecastItem = ({weekDay, hour, state, temperature}) => {
     </Grid>
 
     <Grid item>
-      [icono]{state}
+    <IconContext.Provider value={{size: "5rem"}}>
+      <WeatherIcon weather={state} />
+    </IconContext.Provider>
     </Grid>
 
     <Grid item>
