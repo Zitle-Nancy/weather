@@ -1,18 +1,24 @@
 import {render} from '@testing-library/react';
 
-import WeatherDetails from './WeatherDetails'
+import ForecastItem from './ForecastItem'
 
 /**
  * FindText: permite encontrar un componente por el texto que le indiquemos
  */
-test('WeatherDetails render', async () => {
-  const { findByText } = render(<WeatherDetails humidity={80} wind={10}/>)
+test('ForecastItem render', async () => {
+  const { findByText } = render(<ForecastItem weekDay="Lunes" hour={10} temperature={23}/>)
 
-  // usamos una regex para encontrar los valores indicados y lo hacemos con los slash
+  /* 
+    * usamos una regex para encontrar los valores indicados y 
+    * lo hacemos con los slash
+  */
 
-  const wind = await findByText(/10/)
-  const humidity = await findByText(/80/)
+  const weekDay = await findByText(/Lunes/i)
+  const hour = await findByText(/10/i)
+  const temperature = await findByText(/23/i)
   
-  expect(humidity).toHaveTextContent('Humedad: 80%')
-  expect(wind).toHaveTextContent('Viento: 10 km/h')
+  
+  expect(weekDay).toHaveTextContent('Lunes')
+  expect(hour).toHaveTextContent('10')
+  expect(temperature).toHaveTextContent('23')
 })

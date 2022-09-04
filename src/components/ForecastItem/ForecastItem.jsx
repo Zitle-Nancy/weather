@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography';
 import { IconContext } from 'react-icons';
 import Grid from '@mui/material/Grid'
-import WeatherIcon from '../WeatherIcon';
+import WeatherIcon, {validWeather} from '../WeatherIcon';
 
 const ForecastItem = ({weekDay, hour, state, temperature}) => {
   return (
@@ -37,7 +37,7 @@ const ForecastItem = ({weekDay, hour, state, temperature}) => {
 ForecastItem.propTypes = {
   weekDay: PropTypes.string.isRequired,
   hour:PropTypes.number.isRequired,
-  state:PropTypes.string.isRequired,
+  state: PropTypes.oneOf(validWeather).isRequired,
   temperature: PropTypes.number.isRequired,
 }
 
