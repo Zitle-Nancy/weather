@@ -90,3 +90,64 @@ La idea es que los requerimientos sean traducido en pruebas unitarias y que esta
 ## Proveedores de contexto (Context.Provider)
 
 El context.provider es un componente que recibe un prop value que serán los valores a compartir y todos los componentes renderizados dentro del que tiene el provider tendrán accesp a los valores del contexto.
+
+# Diseño responsivo: Grid Layout
+
+En story book existen addons (los defino como plugins), uno de ello es `@storybook/addon-viewport` el cual nos ayudará para ver el diseño de nuestros componentes en diferentes tamaños. Solo debomos instalarlo y agregar esta linea en el main.js de la carpeta storybook.
+`"@storybook/addon-viewport/register"`
+
+PropTypes: la propiedad `oneOf()` que recibe nuestro arreglo, nos ayuda a ser más especificos sobre que valores debe recibir, es decir en el ejemplo de weather no derbería de aceptar mi nombre "Nancy" si bien, es un string no es un tipo de weather y con esa propiedad nos aseguramos de obtener un error.
+
+Testing - Nuevas propiedades
+
+- > `jest.fn()`: nos ayuda a crear una función mock
+- > `fireEvent`: nos ayudará a ejecutar un evento/acción
+- > `toHaveBeenCalledTimes`: un método donde podremos pasarle por args cuantas veces una función deberá ser ejecutada.
+- > `FindText`: permite encontrar un componente por el texto que le indiquemos
+
+# Currying
+
+Prceso de descomponer una funcion que recibe más de un parametro en una serie de funciones que utilizan un unico parametro, tecnica utilizada en programación funcional, esto se usa en connect de redux.
+
+Beneficios:
+
+- Mejor estructura de código
+- Potente con Map
+- Más reutilización de funciones
+- Permite componet funciones
+
+# Closure
+
+Funciones internas a otras funciones.
+.....
+
+### PropTypes.shape
+
+Esta propiedad nos ayuda a definir una estructura (figura) a nuestro valor, ejemplo, tenemos un array que debe contener los siguientes valores `weekDay, hour, state, temperature`, hacemos lo siguiente:
+
+```js
+nameComponent:PropTypes.arrayOf(PropTypes.shape({
+  weekDay: PropTypes.string.isRequired,
+  hour: PropTypes.string.isRequired,
+  ....
+}))
+```
+
+Con lo anterior nos aseguramos que el array tenga los valores que necesitaremos, esto es mejor que solo poner:
+`nameComponent: PropTypes.array.isRequired`
+
+### FindAllByTestId (Testing)
+
+Esta propiedad la vamos a ocupar cuando necesitamos validar varios elementos(un array) y nos es complicado identificar cada uno por texto u otra caracteristica.
+El modo de uso es:
+
+1. Agregar esta propiedad en nuestro componente usando `data-testid="name_id"`
+   `<Grid data-testid="name_component">...</Grid>`
+   > Note: en el ejemplo anterior, se agrega ese `data-test` en los items de un array.
+
+y en nuestro test hacemos lo siguiente:
+
+1. usamos `findAllByTestId` para encontrar todos los items que contengan el id de `data-testid="name_id"`
+2. usamos `findAllByTestId("name_id")` donde se almacena en una constante y con ella hacemos lo que necesitemos;
+3. en nuestro caso validamos la longitud que esperamos que renderice(en este caso 6), ejemplo:
+   `expect(forecastItems).toHaveLength(6)`

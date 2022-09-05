@@ -1,31 +1,15 @@
-import React from 'react'
+import { IconContext } from 'react-icons';
 import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography';
-import { WiCloud, WiDayCloudy,WiDayFog, WiDaySunny,WiRain } from 'react-icons/wi'
-import { IconContext } from 'react-icons';
 
-const weathers = {
-  cloud:WiCloud,
-  cloudy:WiDayCloudy,
-  fog: WiDayFog,
-  sunny: WiDaySunny,
-  rain: WiRain
-}
-
-const renderWeather = weather => {
-  /**
-   * Linea 19, el and valida que solo si la parte izquierda no es undefined la pinta
-   * si lo es, pinta la derecha.
-   */
-  const WeatherIcon = weathers[weather] ?? weathers['sunny']
-  return <WeatherIcon/>
-}
+import WeatherIcon, {validWeather} from '../WeatherIcon'
 
 const WeatherComponent = ({temperature, weather}) => {
+  console.log(weather, 'weather en weather')
   return (
     <div>
       <IconContext.Provider value={{size: "5rem"}}>
-        {renderWeather(weather)}
+        <WeatherIcon weather={weather} />
       </IconContext.Provider>
       <Typography display="inline" variant='h3'>{temperature}</Typography>
     </div>
@@ -34,7 +18,7 @@ const WeatherComponent = ({temperature, weather}) => {
 
 WeatherComponent.propTypes = {
   temperature: PropTypes.number.isRequired,
-  weather: PropTypes.string.isRequired
+  weather: PropTypes.oneOf(validWeather).isRequired
 }
 
 export default WeatherComponent
