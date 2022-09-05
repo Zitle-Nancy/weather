@@ -119,3 +119,19 @@ Beneficios:
 # Closure
 
 Funciones internas a otras funciones.
+.....
+
+### PropTypes.shape
+
+Esta propiedad nos ayuda a definir una estructura (figura) a nuestro valor, ejemplo, tenemos un array que debe contener los siguientes valores `weekDay, hour, state, temperature`, hacemos lo siguiente:
+
+```
+nameComponent:PropTypes.arrayOf(PropTypes.shape({
+  weekDay: PropTypes.string.isRequired,
+  hour: PropTypes.string.isRequired,
+  ....
+}))
+```
+
+Con lo anterior nos aseguramos que el array tenga los valores que necesitaremos, esto es mejor que solo poner:
+`nameComponent: PropTypes.array.isRequired`
