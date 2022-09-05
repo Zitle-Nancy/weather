@@ -125,7 +125,7 @@ Funciones internas a otras funciones.
 
 Esta propiedad nos ayuda a definir una estructura (figura) a nuestro valor, ejemplo, tenemos un array que debe contener los siguientes valores `weekDay, hour, state, temperature`, hacemos lo siguiente:
 
-```
+```js
 nameComponent:PropTypes.arrayOf(PropTypes.shape({
   weekDay: PropTypes.string.isRequired,
   hour: PropTypes.string.isRequired,
@@ -135,3 +135,19 @@ nameComponent:PropTypes.arrayOf(PropTypes.shape({
 
 Con lo anterior nos aseguramos que el array tenga los valores que necesitaremos, esto es mejor que solo poner:
 `nameComponent: PropTypes.array.isRequired`
+
+### FindAllByTestId (Testing)
+
+Esta propiedad la vamos a ocupar cuando necesitamos validar varios elementos(un array) y nos es complicado identificar cada uno por texto u otra caracteristica.
+El modo de uso es:
+
+1. Agregar esta propiedad en nuestro componente usando `data-testid="name_id"`
+   `<Grid data-testid="name_component">...</Grid>`
+   > Note: en el ejemplo anterior, se agrega ese `data-test` en los items de un array.
+
+y en nuestro test hacemos lo siguiente:
+
+1. usamos `findAllByTestId` para encontrar todos los items que contengan el id de `data-testid="name_id"`
+2. usamos `findAllByTestId("name_id")` donde se almacena en una constante y con ella hacemos lo que necesitemos;
+3. en nuestro caso validamos la longitud que esperamos que renderice(en este caso 6), ejemplo:
+   `expect(forecastItems).toHaveLength(6)`
