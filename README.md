@@ -155,15 +155,16 @@ y en nuestro test hacemos lo siguiente:
 # Recharts
 
 [Documentation](https://github.com/recharts/recharts)
+Estas son algunas etiquetas y props que utilzamos para este curso.
 
-> <LineChart/> : Lo defino como nuestro canvas
-> <Line /> : Recibe varias props, en ellas:
+- `<LineChart/>` : Lo defino como nuestro canvas, donde vamos a pintar nuestra gráfica.
+- `<Line />` : Recibe varias props, en ellas:
+  - `Type`: monotone fue la que usamos en este ejemplo,
+  - `dataKey`: donde indicaremos a que valor de nuestra data hará referencia, es decir, nuestra data es un array de objetos que contiene valores como el min, max y dayHour.
+  - `stroke` : para el color.
 
-- `Type`,
-- `dataKey`: donde indicaremos a que valor de nuestra data hará referencia, es decir, nuestra data es un array de objetos que contiene valores como el min, max y dayHour.
-- `stroke` : para el color.
-  > <XAxis/>, <YAxis/> : pintar los ejes en nuestra grafica.
-  > <CartesianGrid/> : Crea una grid en nuestra grafica
-  > <Tooltip/>: Genera un tooltip que nos muestra más contenido al pasar el mouse en nuestras graficas.
-  >
-  > <Legend/>: Nos indica que significa cada color.
+##### Otras etiquetas
+- `<XAxis/>, <YAxis/>` : pintar los ejes en nuestra grafica.
+- `<CartesianGrid/>` : Crea una grid en nuestra grafica
+- `<Tooltip/>`: Genera un tooltip que nos muestra más contenido al pasar el mouse en nuestras graficas.
+- `<Legend/>`: Nos indica que significa cada color.
