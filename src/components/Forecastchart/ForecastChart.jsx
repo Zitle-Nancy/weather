@@ -1,24 +1,30 @@
 import PropTypes from 'prop-types';
-import Grid from '@mui/material/Grid';
-
-const ForecastChart = () => {
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+const ForecastChart = ({data}) => {
   return (
-    <Grid 
-      container
-      justifyContent="center"
-      alignItems="center"
+    <LineChart
+      width={700}
+      height={250}
+      data={data}
+      margin={{ top: 5, right: 5, left: 5, bottom: 20 }}
     >
-    ForecastChart
-    </Grid>
+      <XAxis dataKey="dayHour"/>
+      <YAxis/>
+      <CartesianGrid/>
+      <Tooltip/>
+      <Legend/>
+      <Line type="monotone" dataKey="max" stroke='#ff0000'/>
+      <Line type="monotone" dataKey="min" stroke='#0000ff'/>
+    </LineChart>
   )
 }
 
-ForecastChart.defaultProps = {
-  forecastItemList: []
-}
-
 ForecastChart.propTypes = {
-
+  data: PropTypes.arrayOf(PropTypes.shape({
+    dayHour: PropTypes.string.isRequired,
+    min: PropTypes.number.isRequired,
+    max: PropTypes.number.isRequired
+  })).isRequired
 }
 
 export default ForecastChart

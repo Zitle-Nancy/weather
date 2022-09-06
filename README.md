@@ -121,7 +121,7 @@ Beneficios:
 Funciones internas a otras funciones.
 .....
 
-### PropTypes.shape
+## PropTypes.shape
 
 Esta propiedad nos ayuda a definir una estructura (figura) a nuestro valor, ejemplo, tenemos un array que debe contener los siguientes valores `weekDay, hour, state, temperature`, hacemos lo siguiente:
 
@@ -136,7 +136,7 @@ nameComponent:PropTypes.arrayOf(PropTypes.shape({
 Con lo anterior nos aseguramos que el array tenga los valores que necesitaremos, esto es mejor que solo poner:
 `nameComponent: PropTypes.array.isRequired`
 
-### FindAllByTestId (Testing)
+## FindAllByTestId (Testing)
 
 Esta propiedad la vamos a ocupar cuando necesitamos validar varios elementos(un array) y nos es complicado identificar cada uno por texto u otra caracteristica.
 El modo de uso es:
@@ -151,3 +151,19 @@ y en nuestro test hacemos lo siguiente:
 2. usamos `findAllByTestId("name_id")` donde se almacena en una constante y con ella hacemos lo que necesitemos;
 3. en nuestro caso validamos la longitud que esperamos que renderice(en este caso 6), ejemplo:
    `expect(forecastItems).toHaveLength(6)`
+
+# Recharts
+
+[Documentation](https://github.com/recharts/recharts)
+
+> <LineChart/> : Lo defino como nuestro canvas
+> <Line /> : Recibe varias props, en ellas:
+
+- `Type`,
+- `dataKey`: donde indicaremos a que valor de nuestra data hará referencia, es decir, nuestra data es un array de objetos que contiene valores como el min, max y dayHour.
+- `stroke` : para el color.
+  > <XAxis/>, <YAxis/> : pintar los ejes en nuestra grafica.
+  > <CartesianGrid/> : Crea una grid en nuestra grafica
+  > <Tooltip/>: Genera un tooltip que nos muestra más contenido al pasar el mouse en nuestras graficas.
+  >
+  > <Legend/>: Nos indica que significa cada color.
