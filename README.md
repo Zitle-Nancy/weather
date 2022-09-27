@@ -36,7 +36,7 @@ Lo mismo sucede con los test en nuestro código, nos garantizan de que lo que es
 
 #### Test unitario (pruebas unitarias)
 
-Se prueba una unidad (bloque) de código, por ejemplo una función, un objeto, etc. El test unitario es atomico, porque verifica la funionalidad de lo que se ha escrito en un bloque de código.
+Se prueba una unidad (bloque) de código, por ejemplo una función, un objeto, etc. El test unitario es atomico, porque verifica la funcionalidad de lo que se ha escrito en un bloque de código.
 
 #### Test de integración
 
@@ -89,7 +89,7 @@ La idea es que los requerimientos sean traducido en pruebas unitarias y que esta
 
 ## Proveedores de contexto (Context.Provider)
 
-El context.provider es un componente que recibe un prop value que serán los valores a compartir y todos los componentes renderizados dentro del que tiene el provider tendrán accesp a los valores del contexto.
+El context.provider es un componente que recibe un prop value que serán los valores a compartir y todos los componentes renderizados dentro del que tiene el provider tendrán acceso a los valores del contexto.
 
 # Diseño responsivo: Grid Layout
 
@@ -164,7 +164,14 @@ Estas son algunas etiquetas y props que utilzamos para este curso.
   - `stroke` : para el color.
 
 ##### Otras etiquetas
+
 - `<XAxis/>, <YAxis/>` : pintar los ejes en nuestra grafica.
 - `<CartesianGrid/>` : Crea una grid en nuestra grafica
 - `<Tooltip/>`: Genera un tooltip que nos muestra más contenido al pasar el mouse en nuestras graficas.
 - `<Legend/>`: Nos indica que significa cada color.
+
+# React router
+
+comando `npm install react-router-dom@5.1`
+
+SPA -> como le entiendo es que descarga el mayor de nuestro contenido para que cuando nuestro usuario este navegando no tenga que estar haciendo un llamado al servidor, si no ya todo este accesible con la descarga previa. (buscar más definición)
