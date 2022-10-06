@@ -7,6 +7,7 @@ import Weather from "./../components/Weather";
 import WeatherDetails from "./../components/WeatherDetails";
 import ForecastChart from "./../components/Forecastchart";
 import Forecast from "./../components/Forecast";
+import AppFrame from "../components/AppFrame/AppFrame";
 
 const CityPage = (props) => {
   const city = "Buenos Aires";
@@ -56,33 +57,35 @@ const CityPage = (props) => {
     },
   ];
   return (
-    <Grid
-      container
-      spacing={2}
-      justifyContent="space-around"
-      direction="column"
-    >
+    <AppFrame>
       <Grid
         container
-        item
-        xs={12}
-        justifyContent="center"
-        alignItems="flex-end"
+        spacing={2}
+        justifyContent="space-around"
+        direction="column"
       >
-        <CityInfo city={city} country={country} />
+        <Grid
+          container
+          item
+          xs={12}
+          justifyContent="center"
+          alignItems="flex-end"
+        >
+          <CityInfo city={city} country={country} />
+        </Grid>
+        <Grid container item xs={12} justifyContent="center">
+          <Weather weather={state} temperature={temperature} />
+          <WeatherDetails humidity={humidity} wind={wind} />
+        </Grid>
+        <Grid item>
+          <ForecastChart data={data} />
+        </Grid>
+        <Grid item>
+          <Forecast forecastItemList={forecastItemList} />
+        </Grid>
+        <Link to="/main">Volver a main</Link>
       </Grid>
-      <Grid container item xs={12} justifyContent="center">
-        <Weather weather={state} temperature={temperature} />
-        <WeatherDetails humidity={humidity} wind={wind} />
-      </Grid>
-      <Grid item>
-        <ForecastChart data={data} />
-      </Grid>
-      <Grid item>
-        <Forecast forecastItemList={forecastItemList} />
-      </Grid>
-      <Link to="/main">Volver a main</Link>
-    </Grid>
+    </AppFrame>
   );
 };
 
