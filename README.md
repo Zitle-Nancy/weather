@@ -175,3 +175,13 @@ Estas son algunas etiquetas y props que utilzamos para este curso.
 comando `npm install react-router-dom@5.1`
 
 SPA -> como le entiendo es que descarga el mayor de nuestro contenido para que cuando nuestro usuario este navegando no tenga que estar haciendo un llamado al servidor, si no ya todo este accesible con la descarga previa. (buscar más definición)
+
+# Children
+
+Esta propiedad exclusiva de React nos permite pasarla diferentes valores y que estos sean renderizados en su componente padre.
+
+# Vanta.js y Three.js
+
+- Vanta.js libreria de animaciones como fondos [Vanta.js](<https://www.vantajs.com/#(alignment:20,backgroundAlpha:0.8286344400071527,backgroundColor:1650002,birdSize:1,cohesion:20,color1:6570048,color2:53759,colorMode:varianceGradient,gyroControls:!f,minHeight:200,minWidth:200,mouseControls:!t,quantity:5,scale:1,scaleMobile:1,separation:20,speedLimit:5,touchControls:!t,wingSpan:30)>)
+
+- Three.js Librería de animaciones 3D [three.js](https://threejs.org/)
